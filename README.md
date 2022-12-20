@@ -1,6 +1,8 @@
 # jql
 
-My favorite JQL queries
+My favorite JQL queries. 
+
+JQL can be quite forgiving so I will put down a couple derivatives as I think of them.
 
 ---
 
@@ -8,9 +10,13 @@ My favorite JQL queries
 
 If the main body of the ticket has these keywords, don't return.
 
-> Any MHC (project) tickets that have the word `printer` but not the word `parking`
+> Any MHC (project) tickets that have the word `printer` but not the word `parking`.
 
-`created >= -7d AND project = MHC AND text ~ "printer" AND NOT text ~ "parking"`
+```
+text ~ printer AND NOT text ~ parking        # notice the lack of quotations around the keyword. If there was a space there, you should use quotations
+text ~ "printer" AND NOT text ~ "parking"    # does the same as above
+NOT text ~ parking                           # notice the lack of quotations
+```
 
 ---
 
