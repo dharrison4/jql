@@ -15,7 +15,6 @@ If the main body of the ticket has these keywords, don't return.
 ```
 text ~ printer AND NOT text ~ parking        # notice the lack of quotations around the keyword. If there was a space there, you should use quotations
 text ~ "printer" AND NOT text ~ "parking"    # does the same as above
-NOT text ~ parking                           # notice the lack of quotations
 ```
 
 ---
