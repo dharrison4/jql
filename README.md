@@ -28,6 +28,12 @@ It looks like `"konica printer"` should be processed differently to `"konica" AN
  text ~ "printer konica"                      #no difference!
  ```
  
+ ## All tickets that I have, unfinished
+ ```
+ assignee in (currentUser()) AND status not in (Done, Completed, Closed)
+ ```
+ You can also add 
+ 
  ## More to come
  ### as I think of them
 
