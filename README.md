@@ -27,6 +27,17 @@ It looks like `"konica printer"` should be processed differently to `"konica" AN
  text ~ "printer" AND text ~ "konica"
  text ~ "printer konica"                      #no difference!
  ```
+
+### Specific keywords
+
+You can search for specific and non-specific (fuzz) text. To continue on from the Konica Printer example above:
+
+> Any tickets that have the words 'konica printer', together, specifically in this order.
+> ```
+> text ~ "\"konica printer\""
+> ```
+
+the `\` is not an error in GitHub formatting, it is literally what I have to use in a JQL search to include quotations for a string. `text ~ kinda search terms here` vs `text ~ "these exact search terms here"`
  
  ## All tickets that I have, unfinished
  ```
