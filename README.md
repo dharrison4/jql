@@ -41,9 +41,12 @@ the `\` is not an error in GitHub formatting, it is literally what I have to use
  
  ## All tickets that I have, unfinished
  ```
- assignee in (currentUser()) AND status not in (Done, Completed, Closed)
+ assignee in currentUser() AND status not in (Done, Completed, Closed)
  ```
- You can also add 
+...#or...
+ ```
+ assignee in currentUser() AND statusCategory != Done
+ ```
 
 ## any improperly categorized tickets
 
