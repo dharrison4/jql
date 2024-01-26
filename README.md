@@ -73,7 +73,7 @@ AND
 
 ORDER BY Updated ASC
 ```
-The above filter JQL will grab any MHC or HAR tickets that don't have a department, or don't have a complete department. 
+The above filter JQL will grab any MHC or HAR tickets that don't have a department, or don't have a _complete_ department. 
 
 E.g. `11307, 11308` - this is `Client Services - Classroom support`
 
