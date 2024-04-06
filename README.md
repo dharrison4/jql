@@ -4,6 +4,54 @@ My favorite JQL queries.
 
 JQL can be quite forgiving so I will put down a couple derivatives as I think of them.
 
+Jira updated how JQL queries are composed. It seems to be entirely aestetic instead of functional. Because of this, any images on this page may be outdated.
+
+---
+
+## Keeping up to date with current events
+
+Let's say, for example, I work in tech support but I enjoy looking at CyberSecurity-related tickets so I can learn more about 1) MacEwan's IT infrastructure, 2) MacEwan's security and privacy policies, 3) trends for cybersecurity from the POV of support desk (is something trending?) and 4) the field of cybersecurity in general. _Always be learning_.
+
+1. Assigned to the current user
+   - `assignee = currentUser()`
+2. Created this year
+   - `created >= StartOfYear()`
+3. Keyword list in `text` or `summary` fields
+   - `text ~ "approx match in the text field"`
+   - `summary ~ "approx match in the ticket title field"`
+   - the list:
+     - secur*
+     - cyber*
+     - cybersec*
+     - hack*
+     - phish*
+     - compromise
+     - malware
+     - malicious
+     - breach
+     - vulnerab
+     - fire*wall
+     - encrypt*
+     - incident response
+     - authenticat*
+     - ransom*
+     - MFA
+     - 2FA
+     - Multi*factor
+     - 2*factor
+     - DDOS
+     - security awareness training
+
+```
+(text~"security" OR text~"secure" OR text~"cyber" OR text~"cybersecurity" OR text~"cybersec" OR text~"hack" OR text~"phish" OR text~"phishing" OR text~"compromise" OR text~"malware" OR text~"breach" OR text~"vulnerable" OR text~"vulnerability" OR text~"firewall" OR text~"fire wall" OR text~"encryption" OR text~"encrypt" OR text~"encrypted" OR text~"incident response" OR text~"authentication" OR text~"authenticate" OR text~"ransom" OR text~"ransomware" OR text~"MFA" OR text~"2FA" OR text~"Multi-factor" OR text~"2-factor" OR text~"DDOS" OR text~"security awareness training" OR summary~"security" OR summary~"secure" OR summary~"cyber" OR summary~"cybersecurity" OR summary~"cybersec" OR summary~"hack" OR summary~"phish" OR summary~"phishing" OR summary~"compromise" OR summary~"malware" OR summary~"breach" OR summary~"vulnerable" OR summary~"vulnerability" OR summary~"firewall" OR summary~"fire wall" OR summary~"encryption" OR summary~"encrypt" OR summary~"encrypted" OR summary~"incident response" OR summary~"authentication" OR summary~"authenticate" OR summary~"ransom" OR summary~"ransomware" OR summary~"MFA" OR summary~"2FA" OR summary~"Multi-factor" OR summary~"2-factor" OR summary~"DDOS" OR summary~"security awareness training") 
+AND 
+assignee = currentUser()
+AND
+created >= startOfYear()
+
+order by Updated DESC, statusCategory ASC
+```
+
 ---
 
 ## Omit 
@@ -83,7 +131,7 @@ E.g. `11307, 11308` - this is `Client Services - Classroom support`
 ---
  
 ## More to come
-### as I think of them
+### as I create/improve them
 
 ---
 
